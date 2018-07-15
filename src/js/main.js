@@ -1,12 +1,23 @@
 var mainState = {
     preload: function() {
-        // 이 기능은 처음에 실행됩니다.
-        // 그것이 이미지와 사운드를 로드하는 곳입니다.
+      game.load.image("door", "background_2.png");
+
+      game.load.spritesheet("correct", "correct.png");
+      game.load.spritesheet("wrong", "wrong.png");
     },
 
     create: function() {
-        // 이 함수는 preload 함수 후에 호출됩니다.
-        // 여기에서는 게임을 설정하고 스프라이트를 표시합니다.
+      game.physics.startSystem(Phaser.Physics.ARCADE);
+      game.stage.backgroundColor = "#eee8aa"; //배경색 지정
+      var image = game.add.image(0, 0, "door"); //배경이미지 0, 0 좌표에 지정
+
+      game.scale.pageAlignHorizontally = true; //화면 가운데위치
+      game.scale.pageAlignVertically = true; //화면 가운데위치
+
+      correct = game.add.sprite(55,400,"correct");
+      game.physics.arcade.enable(correct);
+      wrong = game.add.sprite(800,400,"wrong");
+      game.physics.arcade.enable(wrong);
     },
 
     update: function() {
