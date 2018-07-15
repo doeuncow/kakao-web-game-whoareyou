@@ -1,10 +1,10 @@
 var game = new Phaser.Game(960, 640, Phaser.CANVAS, null, {preload:preload, create:create, update:update});
 
  function preload(){
-   game.load.image("door", "../assets/background.png");
+   game.load.image("door", "./assets/background.png");
 
-   game.load.spritesheet("correct", "../assets/correct.png");
-   game.load.spritesheet("wrong", "../assets/wrong.png");
+   game.load.spritesheet("correct", "./assets/correct.png");
+   game.load.spritesheet("wrong", "./assets/wrong.png");
  }
  function create(){
    game.physics.startSystem(Phaser.Physics.ARCADE);
